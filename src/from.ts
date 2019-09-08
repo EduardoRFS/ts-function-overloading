@@ -1,5 +1,5 @@
-const map = (x: number) => `${x}, fine a number`;
-const map = (x: string) => `${x}, wat a motherfucking string?`;
+const map = (x: number[]) => x.reduce((a, b) => a + b);
+const map = (x: string[]) => x.join(', ');
 
-console.log(map(1));
-console.log(map('a'));
+console.log(map([1, 2, 3]));
+console.log(map(['a', 'b', 'c']));

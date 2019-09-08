@@ -1,6 +1,7 @@
 import R from 'ramda';
 import { isAssignableToType } from 'ts-simple-type';
 import ts from 'typescript';
+import slug from 'slug';
 
 const filePath = './src/from.ts';
 
@@ -24,7 +25,16 @@ const transform: ts.TransformerFactory<ts.SourceFile> = context => {
       const types = fn.parameters.map(param =>
         checker.getTypeAtLocation(param)
       );
-      const suffix = types.map(type => checker.typeToString(type));
+      const suffix = types.map(type =>
+        slug(
+          checker
+            .typeToString(type)
+            .replace(/\[\]/g, '_array')
+            .replace(/\[/g, 'left_bracket')
+            .replace(/\]/g, 'right_bracket'),
+          '_'
+        )
+      );
 
       const newName = [node.name.getText(), ...suffix].join('_');
       if (dict[node.name.getText()]) {
