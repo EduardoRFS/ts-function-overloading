@@ -1,0 +1,46 @@
+{
+  "name": "ts-funciton-overload",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "EduardoRFS <theeduardorfs@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/ramda": "^0.26.21",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^4.0.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "ts-simple-type": "^0.3.6",
+    "typescript": "^3.5.3"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/test"
+    ],
+    "preset": "ts-jest/presets/js-with-ts"
+  }
+}
