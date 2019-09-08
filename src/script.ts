@@ -61,7 +61,7 @@ const transform: ts.TransformerFactory<ts.SourceFile> = context => {
       const args = node.arguments.map(x => checker.getTypeAtLocation(x));
       const match = value.find(item =>
         R.zip(item.params, args).every(([param, arg]) =>
-          isAssignableToType(param, arg)
+          isAssignableToType(param, arg, checker)
         )
       );
       if (match) {
